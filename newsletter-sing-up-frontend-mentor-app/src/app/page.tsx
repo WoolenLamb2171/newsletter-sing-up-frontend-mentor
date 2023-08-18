@@ -5,14 +5,15 @@ import tick from "../../public/images/icon-success.svg";
 import EmailForm from "@/components/emailForm";
 import { useContext } from "react";
 import { EmailContext } from "@/components/provider";
+import SuccessWindow from "@/components/succcessWindow";
 
 
 export default function Home() {
-  const {email, setEmail} = useContext(EmailContext);
+  const {email} = useContext(EmailContext);
 
   return (
     <main className="flex flex-col">
-        {email?.isSubbmitted ? <div>context state is true</div> : (
+        {email?.isSubbmitted ? <SuccessWindow /> : (
           <>
               <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/>
 
@@ -37,9 +38,7 @@ export default function Home() {
 
               <EmailForm />
           </>
-
         )}
-
     </main>
   )
 }
