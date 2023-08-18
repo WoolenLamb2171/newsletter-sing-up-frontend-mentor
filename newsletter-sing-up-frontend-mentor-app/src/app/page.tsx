@@ -5,9 +5,11 @@ import EmailForm from "@/components/emailForm";
 
 
 export default function Home() {
+
+
   return (
     <main className="flex flex-col">
-        <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration"/>
+        <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/>
 
         <h1 className="font-Bold text-4xl text-left ml-6 mb-7">Stay updated!</h1>
 
