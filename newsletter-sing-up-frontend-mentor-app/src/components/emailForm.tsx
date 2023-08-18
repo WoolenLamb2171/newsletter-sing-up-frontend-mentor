@@ -23,11 +23,13 @@ const EmailForm = () => {
     }
 
     return ( 
-        <div>
+        <div className="ml-6 mr-6">
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label htmlFor="email">Email address</label>
+                <div className="flex justify-between mb-2">
+                    <label className="font-Regular text-xs text-left" htmlFor="email">Email address</label>
+                    <div>{errors?.email && <p className="font-Regular text-xs text-Tomato">{errors?.email?.message || "Error!"}</p>}</div>
+                </div>
 
-                <div>{errors?.email && <p>{errors?.email?.message || "Error!"}</p>}</div>
 
                 <input {...register('email', {
                     required: "Fill in the form",
@@ -35,9 +37,11 @@ const EmailForm = () => {
                         value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                         message: "Invalid e-mail format"
                     },
-                })} className="border" type="email"/>
+                })} className="border rounded-lg w-full h-13 p-3 font-Regular mb-4" placeholder="example@company.com" type="email"/>
 
-                <button className="border" disabled={!isValid}>Subscribe to monthly newsletter</button>
+{/* hover:border-Dark-Slate-Grey */}
+
+                <button className="border rounded-lg w-full h-13 p-3 font-Regular text-White bg-Dark-Slate-Grey" disabled={!isValid}>Subscribe to monthly newsletter</button>
             </form>
         </div>
      );
