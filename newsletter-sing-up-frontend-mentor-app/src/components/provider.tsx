@@ -1,41 +1,36 @@
 'use client'
-import React, { createContext, ReactNode, useState } from "react";
+import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 
-interface ProviderProps {
-    children: ReactNode;
+export type Email = {
+    isSubbmitted: boolean;
 }
 
-interface ContextState {
-    // Определите свойства состояния контекста и их типы
-    // Например: property: string;
-    isSubmitted: boolean;
+export interface EmailContextInterface {
+    email: Email,
+    setEmail: Dispatch<SetStateAction<Email>>,
 }
 
-interface ContextValue {
-    contextState: ContextState;
-    updateContextState: (newContext: ContextState) => void;
+const defaultState = {
+    email: {
+        isSubbmitted: false
+    },
+    setEmail: (email: Email) => {}
+} as EmailContextInterface
+
+export const EmailContext = createContext(defaultState);
+
+type EmailProviderProps = {
+    children: ReactNode
 }
 
-
-const Context = createContext<ContextValue >({contextState: {isSubmitted: false}, updateContextState: () => {}});
-
-
-const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
-    const [contextState, setContextState] = useState<ContextState>({
-        isSubmitted: false,
+export default function EmailProvider({children}: EmailProviderProps){
+    const  [email, setEmail] = useState<Email>({
+        isSubbmitted: false,
     });
 
-    
-
-    const updateContextState = (newContext: ContextState) =>{
-        setContextState((prevContext) => ({...prevContext, ...newContext}))
-    }
-
-    return ( 
-        <Context.Provider value={{contextState, updateContextState}}>
-            {props.children}
-        </Context.Provider>
-    );
+    return (
+        <EmailContext.Provider value={{email, setEmail}}>
+            {children}
+        </EmailContext.Provider>
+    )
 }
- 
-export {Context, Provider};

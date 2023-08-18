@@ -10,13 +10,9 @@ import { useEffect } from "react";
 export default function Home() {
   const {contextState, updateContextState} = useAppContext();
 
-  useEffect(() => {
-
-  }, [contextState.isSubmitted])
-
   return (
     <main className="flex flex-col">
-        {contextState.isSubmitted ? <div>context state is true</div> : (
+        {contextState?.isSubmitted ? <div>context state is true</div> : (
           <>
               <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/>
 

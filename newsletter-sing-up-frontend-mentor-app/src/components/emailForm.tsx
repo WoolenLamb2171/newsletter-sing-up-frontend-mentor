@@ -23,7 +23,7 @@ const EmailForm = () => {
     const onSubmit = (data: FormData): void => {
         // alert(JSON.stringify(data));
         updateContextState({isSubmitted: true});
-        // alert(contextState.isSubmitted)
+        alert(contextState?.isSubmitted)
         reset();
     }
 
