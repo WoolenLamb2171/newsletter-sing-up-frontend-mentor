@@ -11,12 +11,21 @@ interface ContextState {
     isSubmitted: boolean;
 }
 
-const Context = createContext<{ contextState: ContextState; updateContextState: (newContext: ContextState) => void } | undefined>(undefined);
+interface ContextValue {
+    contextState: ContextState;
+    updateContextState: (newContext: ContextState) => void;
+}
+
+
+const Context = createContext<ContextValue >({contextState: {isSubmitted: false}, updateContextState: () => {}});
+
 
 const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
     const [contextState, setContextState] = useState<ContextState>({
         isSubmitted: false,
     });
+
+    
 
     const updateContextState = (newContext: ContextState) =>{
         setContextState((prevContext) => ({...prevContext, ...newContext}))

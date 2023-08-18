@@ -1,6 +1,6 @@
 'use client'
 import { useForm } from "react-hook-form";
-
+import { useAppContext } from "./hooks/useAppContext";
 interface FormData {
     email: string;
 }
@@ -17,8 +17,12 @@ const EmailForm = () => {
         mode: "onBlur"
     });
 
+    const {contextState, updateContextState} = useAppContext();
+    
+
     const onSubmit = (data: FormData): void => {
         alert(JSON.stringify(data));
+        updateContextState({isSubmitted: true})
         reset();
     }
 
