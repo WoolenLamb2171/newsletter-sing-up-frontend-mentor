@@ -3,7 +3,7 @@ import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } f
 
 export type Email = {
     isSubbmitted: boolean;
-    adress: string | null | HTMLInputElement;
+    adress: string;
 }
 
 export interface EmailContextInterface {
@@ -27,7 +27,7 @@ type EmailProviderProps = {
 export default function EmailProvider({children}: EmailProviderProps){
     const  [email, setEmail] = useState<Email>({
         isSubbmitted: false,
-        adress: null,
+        adress: "",
     });
 
     return (
