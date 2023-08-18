@@ -1,4 +1,4 @@
 import { useContext } from "react";
-import { Context } from "../provider";
+import { EmailContext } from "../provider";
 
-export const useAppContext = () => useContext(Context);
+export const useAppContext = () => useContext(EmailContext);

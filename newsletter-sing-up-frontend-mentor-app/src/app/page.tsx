@@ -4,15 +4,16 @@ import mobileIllustration from "../../public/images/illustration-sign-up-mobile.
 import tick from "../../public/images/icon-success.svg";
 import EmailForm from "@/components/emailForm";
 import { useAppContext } from "@/components/hooks/useAppContext";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { EmailContext } from "@/components/provider";
 
 
 export default function Home() {
-  const {contextState, updateContextState} = useAppContext();
+  const {email, setEmail} = useContext(EmailContext);
 
   return (
     <main className="flex flex-col">
-        {contextState?.isSubmitted ? <div>context state is true</div> : (
+        {email?.isSubbmitted ? <div>context state is true</div> : (
           <>
               <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/>
 
