@@ -3,8 +3,7 @@ import Image from "next/image";
 import mobileIllustration from "../../public/images/illustration-sign-up-mobile.svg";
 import tick from "../../public/images/icon-success.svg";
 import EmailForm from "@/components/emailForm";
-import { useAppContext } from "@/components/hooks/useAppContext";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { EmailContext } from "@/components/provider";
 
 
