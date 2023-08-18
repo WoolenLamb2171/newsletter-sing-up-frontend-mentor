@@ -14,6 +14,10 @@ const config: Config = {
         'Charcoal-Grey': 'hsl(235, 18%, 26%)',
         'Grey': 'hsl(231, 7%, 60%)',
         'White': 'hsl(0, 0%, 100%)'
+      },
+      fontFamily: {
+        Regular: "Roboto-Regular",
+        Bold: "Roboto-Bold"
       }
     },
   },

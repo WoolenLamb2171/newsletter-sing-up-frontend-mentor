@@ -1,13 +1,10 @@
-
+import Image from "next/image"
 
 export default function Home() {
   return (
-    <main className="">
-        <h1 className="text-Tomato">Tomato</h1>
-        <h1 className="text-Dark-Slate-Grey">Dark Slate Grey</h1>
-        <h1 className="text-Charcoal-Grey">Charcoal Grey</h1>
-        <h1 className="text-Grey">Grey</h1>
-        <h1 className="text-White">White</h1>
+    <main className="flex flex-col justify-center items-center">
+        <p className="font-Regular text-base">regular</p>
+        <p className="font-Bold text-lg">Stay updated!</p>
     </main>
   )
 }

@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: Roboto-Bold;
+  src: url("../../public/fonts/Roboto-Bold.ttf") format("TrueType");
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("../../public/fonts/Roboto-Regular.ttf") format("TrueType");
+}
+
 :root {
 
 }
 
 body {
-  
+  @apply bg-White text-Dark-Slate-Grey
 }
