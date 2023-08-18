@@ -1,19 +1,25 @@
 import React, { createContext, ReactNode } from "react";
 
 interface ProviderProps {
-    children: ReactNode,
+
+    children: ReactNode;
+
 }
 
 const Context = createContext<boolean>(false);
 
 const Provider: React.FC<ProviderProps> = (props: ProviderProps) => {
-    const subbmited = false;
+
+    const submitted = false;
 
     return ( 
-        <Context.Provider value={subbmited}>
+        <Context.Provider value={submitted}>
+
             {props.children}
         </Context.Provider>
     );
 }
  
-export {Provider, Context};
+
+export {Context, Provider};
+
