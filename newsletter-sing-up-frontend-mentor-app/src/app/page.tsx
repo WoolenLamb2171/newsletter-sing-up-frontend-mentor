@@ -15,11 +15,10 @@ export default function Home() {
   const isBreakPoint = useMediaQuery(1024);
 
   return (
-    <main className="flex flex-col lg:bg-White lg:border-White lg:rounded-3xl lg:flex-row">
+    <>
         {email?.isSubbmitted ? <SuccessWindow /> : (
-          <>
+          <main className="flex flex-col lg:bg-White lg:border-White lg:rounded-3xl lg:flex-row">
               {isBreakPoint ? <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/> : ""}
-              {/* <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/> */}
               
               {isBreakPoint ? <>
                 <h1 className="font-Bold text-4xl text-left ml-6 mb-7">Stay updated!</h1>
@@ -66,8 +65,8 @@ export default function Home() {
                 </div>}
 
               {isBreakPoint ? "" : <Image className="my-[3%] mr-[3%]" src={bigScreenIllustration} alt="sign up illustation" priority/>}
-          </>
+          </main>
         )}
-    </main>
+    </>
   )
 }

@@ -17,5 +17,5 @@
 }
 
 body {
-  @apply bg-White text-Dark-Slate-Grey lg:bg-Charcoal-Grey lg:flex lg:items-center lg:justify-center lg:h-screen
+  @apply bg-White text-Dark-Slate-Grey lg:bg-Charcoal-Grey lg:flex lg:items-center lg:justify-center lg:h-screen 
 }
