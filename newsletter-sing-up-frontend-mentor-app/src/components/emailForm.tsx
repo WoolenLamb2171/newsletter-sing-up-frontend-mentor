@@ -19,7 +19,6 @@ const EmailForm = () => {
         mode: "onBlur"
     });
 
-    const adressRef = useRef<HTMLInputElement>(null);
     const {setEmail} = useContext(EmailContext);
 
     const onSubmit = (data: FormData): void => {
