@@ -6,16 +6,19 @@ import EmailForm from "@/components/emailForm";
 import { useContext } from "react";
 import { EmailContext } from "@/components/provider";
 import SuccessWindow from "@/components/succcessWindow";
+import useMediaQuery from "@/components/hooks/useMediaQuery";
 
 
 export default function Home() {
   const {email} = useContext(EmailContext);
+  const isBreakPoint = useMediaQuery(1024);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col lg:bg-White lg:border-White lg:rounded-xl lg:w-1/2 lg:h-1/4">
         {email?.isSubbmitted ? <SuccessWindow /> : (
           <>
-              <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/>
+              {isBreakPoint ? <Image className="w-full mb-7 " src={mobileIllustration} alt="sing up illustration" priority/> : ""}
+              {/* <Image className="w-full mb-7" src={mobileIllustration} alt="sing up illustration" priority/> */}
 
               <h1 className="font-Bold text-4xl text-left ml-6 mb-7">Stay updated!</h1>
 
