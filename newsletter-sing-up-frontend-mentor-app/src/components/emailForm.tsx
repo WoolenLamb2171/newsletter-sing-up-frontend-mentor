@@ -1,6 +1,6 @@
 'use client'
 import { useForm } from "react-hook-form";
-import { MutableRefObject, useContext, useRef } from "react";
+import { MutableRefObject, useContext } from "react";
 import { EmailContext } from "./provider";
 interface FormData {
     email: string;
